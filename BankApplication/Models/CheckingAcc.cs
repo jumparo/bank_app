@@ -14,10 +14,10 @@ namespace BankApplication.Models
         [RegularExpression(@"\d{6,10}",ErrorMessage ="Account # must be between 6 and 10 digits")]
         [Display(Name ="Account # ")]
         public string AccountNumber { get; set; }
-        [Display(Name = "First name ")]
+        [Display(Name = "First Name ")]
         [Required]
         public string FirstName { get; set; }
-        [Display(Name = "Last name")]
+        [Display(Name = "Last Name")]
         [Required]
         public string Name
         {
