@@ -26,7 +26,7 @@ namespace BankApplication.Models
                 return string.Format("{0} {1}", this.FirstName, this.LastName);
             }
         }
-        public string LastName { get; set; }
+      
         [DataType(DataType.Currency)]
         public decimal Balance { get; set; }
     }
