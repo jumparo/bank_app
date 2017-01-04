@@ -23,6 +23,7 @@ namespace BankApplication.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+
         }
 
         public static ApplicationDbContext Create()
@@ -30,6 +31,7 @@ namespace BankApplication.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<BankApplication.Models.CheckingAcc> CheckingAccs { get; set; }
+        public DbSet<CheckingAcc>CheckingAccs { get; set; }
+
     }
 }
