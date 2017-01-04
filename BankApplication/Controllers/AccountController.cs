@@ -156,6 +156,8 @@ namespace BankApplication.Controllers
                 if (result.Succeeded)
                 {
                     var db = new ApplicationDbContext();
+                    var accountNumber = (123456 + db.CheckingAccs.Count()).ToString
+                        ().PadLeft(10, '0');
                     var checkingAccount = new CheckingAcc
                     {
                         FirstName = model.FirstName,

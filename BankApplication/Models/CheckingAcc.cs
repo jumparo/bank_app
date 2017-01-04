@@ -34,6 +34,8 @@ namespace BankApplication.Models
         public decimal Balance { get; set; }
         public string Email { get; set; }
         public virtual ApplicationUser User { get; set; }
+        [Required]
         public string ApplicationUserId { get; set; }
+        public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

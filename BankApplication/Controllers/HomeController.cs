@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BankApplication.Models;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,17 @@ namespace BankApplication.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         //GET ../home/index
         //Abstract class ActionResult
+        [Authorize]
         public ActionResult Index()
         {
+
+            var userId = User.Identity.GetUserId();
+            var checkingAccountId = db.CheckingAccs.Where(c => c.ApplicationUserId
+            == userId).First().Id;
+            ViewBag.CheckingAccountId = checkingAccountId;
             return View();
         }
         //GET ../home/about

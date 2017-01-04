@@ -33,5 +33,6 @@ namespace BankApplication.Models
 
         public DbSet<CheckingAcc>CheckingAccs { get; set; }
 
+        public System.Data.Entity.DbSet<BankApplication.Models.Transaction> Transactions { get; set; }
     }
 }
